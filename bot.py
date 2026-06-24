@@ -6,7 +6,7 @@ from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes, ChatMemberHandler
 
 # --- CONFIGURATION ---
-TOKEN = "YOUR_BOT_TOKEN_HERE" # Apna bot token yahan daalein
+TOKEN = "8864441821:AAEvsjEETpSNggfVVJONvjaCoUUe-drg0mA" # Apna bot token yahan daalein
 OWNER_ID = 1869599187
 
 # --- FLASK SERVER (24/7 ALIVE) ---
