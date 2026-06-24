@@ -14,7 +14,6 @@ app = Flask(__name__)
 def home(): return "Bot is alive!"
 
 def run_server():
-    # Render ke according port dynamically set hoga
     port = int(os.environ.get("PORT", 8080))
     app.run(host="0.0.0.0", port=port)
 
@@ -117,15 +116,21 @@ async def mode45_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     GAME_STATE['roll_mode'] = 'normal'
     await update.message.reply_text("✅ Random Mode Active.")
 
-async def main():
+# --- YAHAN MAIN FUNCTION KO FIX KIYA HAI ---
+def main():
     threading.Thread(target=run_server, daemon=True).start()
     application = Application.builder().token(TOKEN).build()
-    application.add_handlers([
-        CommandHandler("show", show_command), CommandHandler("roll", roll_command),
-        CommandHandler("111", cmd_111), CommandHandler("222", cmd_222),
-        CommandHandler("win11", win11_command), CommandHandler("win22", win22_command),
-        CommandHandler("45", mode45_command)
-    ])
+    
+    application.add_handler(CommandHandler("show", show_command))
+    application.add_handler(CommandHandler("roll", roll_command))
+    application.add_handler(CommandHandler("111", cmd_111))
+    application.add_handler(CommandHandler("222", cmd_222))
+    application.add_handler(CommandHandler("win11", win11_command))
+    application.add_handler(CommandHandler("win22", win22_command))
+    application.add_handler(CommandHandler("45", mode45_command))
+    
     application.run_polling()
 
-if __name__ == '__main__': asyncio.run(main())
+if __name__ == '__main__': 
+    main()
+    
