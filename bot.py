@@ -6,7 +6,7 @@ from flask import Flask
 from telegram import Update
 from telegram.ext import Application, CommandHandler, ContextTypes
 
-TOKEN = "8864441821:AAGDPuarOJCGykx-1sVRfYUEOuYo8W0HYIk"
+TOKEN = "8864441821:AAHhRh8bjA6H7pYnfDYpvc_3OZNBDTZD8HY"
 OWNER_ID = 1869599187
 
 app = Flask(__name__)
