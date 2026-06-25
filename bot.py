@@ -113,6 +113,3 @@ async def is_authorized(update: Update, context: ContextTypes.DEFAULT_TYPE) -> b
             await context.bot.send_message(chat_id, "🚫 Mera Owner is group mein nahi hai! Main yeh group chhod raha hoon.")
             await context.bot.leave_chat(chat_id)
             return False
-
-
-Is code me add krdo aur saath me baaki ka code as it is hi rehna chahiye smjhe aap
